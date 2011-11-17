@@ -1,0 +1,29 @@
+#31BC 12732
+PLATFORMID=12732
+
+PLATFORMOS=dryos
+
+MEMBASEADDR=0x1900
+RESTARTSTART=0x50000
+ROMBASEADDR=0xff810000
+
+# Set up size variables for EXMEM
+EXMEM_HEAP_SKIP=0xFD200	#(0x44000000-0x43F02E00) from sub_FF86CAA8 = size of video buffers in EXMEM area (?)
+EXMEM_BUFFER_SIZE=0x300000	# Amount of EXMEM memory to allocate for CHDK = 3MB
+
+MAXRAMADDR=0x03FFFFFF # 64 mb
+
+ifdef OPT_CHDK_IN_EXMEM
+MEMISOSTART=0x3C02DE0		# MAXRAMADDR+1 - EXMEM_HEAP_SKIP - EXMEM_BUFFER_SIZE - 32 (exmem allocates 64 bytes extra, 32 before and 32 after block allocated)
+else
+MEMISOSTART=0x146A2C
+endif
+
+PLFLAGS=-DMEMBASEADDR=$(MEMBASEADDR) -DMEMISOSTART=$(MEMISOSTART) -DMEMISOSIZE=$(MEMISOSIZE)
+PLFLAGS+=-DRESTARTSTART=$(RESTARTSTART)
+
+# type of diskboot encoding: undefined = none; 1 = original; 2 = sx200, d10; 3 = ixus200...
+NEED_ENCODED_DISKBOOT=2
+# type of FI2 encoding
+KEYSYS=d4
+

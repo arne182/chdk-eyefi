@@ -1,0 +1,3 @@
+0xff810000
+ScreenLock 0xFFA04AA4 13
+ScreenUnlock 0xFFA04B48 17

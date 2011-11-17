@@ -1,0 +1,32 @@
+0xff000000
+Fgets_Fut 0xFF026C6C 19
+srand 0xFF245D20 13
+rand 0xFF245D2C 10
+set_control_event 0xFF0911B8 22
+GetDrive_ClusterSize 0xFF06ADBC 12
+GetDrive_TotalClusters 0xFF06ADEC 10
+GetDrive_FreeClusters 0xFF06AE14 8
+mkdir 0xff027520
+MakeDirectory_Fut 0xff026a10 28
+GetImageFolder 0xFF1598B8
+LocalTime 0xFF08446C
+PT_PlaySound 0xFF07F848
+ReadFastDir 0xFF2DD404
+readfastdir 0xFF2DD404
+RenameFile_Fut 0xFF026908
+rename 0xFF026908
+Remove 0xFF0271F8
+SetFileTimeStamp 0xFF027410
+_sqrt 0xFF3AED14
+add_ptp_handler 0xFF28AA1C
+close 0xFF00ABB4 22
+kbd_p1_f 0xFF0249DC
+kbd_p2_f 0xFF0241C4
+open 0xFF00AB04
+opendir 0xFF2DD2B0
+openfastdir 0xFF2DD2B0
+qsort 0xFF359478 19
+reboot_fw_update 0xFF2E28A0
+time 0xFF084A48
+vsprintf 0xFF010858 15
+MakeSDCardBootable 0xFF06B04C

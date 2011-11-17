@@ -1,0 +1,80 @@
+
+main.elf:     file format elf32-littlearm
+
+Disassembly of section .text:
+
+00050000 <_start>:
+   50000:	e3a0dc19 	mov	sp, #6400	; 0x1900
+   50004:	e3a0b000 	mov	fp, #0	; 0x0
+   50008:	eaffffff 	b	5000c <copy_and_restart>
+
+0005000c <copy_and_restart>:
+   5000c:	e1510000 	cmp	r1, r0
+   50010:	e1a0c000 	mov	ip, r0
+   50014:	2a000010 	bcs	5005c <copy_and_restart+0x50>
+   50018:	e0810002 	add	r0, r1, r2
+   5001c:	e15c0000 	cmp	ip, r0
+   50020:	308ce002 	addcc	lr, ip, r2
+   50024:	33a01000 	movcc	r1, #0	; 0x0
+   50028:	3a000002 	bcc	50038 <copy_and_restart+0x2c>
+   5002c:	ea00000a 	b	5005c <copy_and_restart+0x50>
+   50030:	e7d03001 	ldrb	r3, [r0, r1]
+   50034:	e7ce3001 	strb	r3, [lr, r1]
+   50038:	e2422001 	sub	r2, r2, #1	; 0x1
+   5003c:	e3720001 	cmn	r2, #1	; 0x1
+   50040:	e2411001 	sub	r1, r1, #1	; 0x1
+   50044:	1afffff9 	bne	50030 <copy_and_restart+0x24>
+   50048:	ea000006 	b	50068 <copy_and_restart+0x5c>
+   5004c:	e7d13000 	ldrb	r3, [r1, r0]
+   50050:	e7cc3000 	strb	r3, [ip, r0]
+   50054:	e2800001 	add	r0, r0, #1	; 0x1
+   50058:	ea000000 	b	50060 <copy_and_restart+0x54>
+   5005c:	e3a00000 	mov	r0, #0	; 0x0
+   50060:	e2522001 	subs	r2, r2, #1	; 0x1
+   50064:	2afffff8 	bcs	5004c <copy_and_restart+0x40>
+   50068:	e10f0000 	mrs	r0, CPSR
+   5006c:	e3c0003f 	bic	r0, r0, #63	; 0x3f
+   50070:	e38000d3 	orr	r0, r0, #211	; 0xd3
+   50074:	e129f000 	msr	CPSR_fc, r0
+   50078:	e59f1098 	ldr	r1, [pc, #152]	; 50118 <copy_and_restart+0x10c>
+   5007c:	e3e00000 	mvn	r0, #0	; 0x0
+   50080:	e581010c 	str	r0, [r1, #268]
+   50084:	e581000c 	str	r0, [r1, #12]
+   50088:	e581001c 	str	r0, [r1, #28]
+   5008c:	e581002c 	str	r0, [r1, #44]
+   50090:	e581003c 	str	r0, [r1, #60]
+   50094:	e581004c 	str	r0, [r1, #76]
+   50098:	e581005c 	str	r0, [r1, #92]
+   5009c:	e581006c 	str	r0, [r1, #108]
+   500a0:	e581007c 	str	r0, [r1, #124]
+   500a4:	e581008c 	str	r0, [r1, #140]
+   500a8:	e581009c 	str	r0, [r1, #156]
+   500ac:	e58100ac 	str	r0, [r1, #172]
+   500b0:	e58100bc 	str	r0, [r1, #188]
+   500b4:	e58100cc 	str	r0, [r1, #204]
+   500b8:	e58100dc 	str	r0, [r1, #220]
+   500bc:	e58100ec 	str	r0, [r1, #236]
+   500c0:	e3540007 	cmp	r4, #7	; 0x7
+   500c4:	e58100fc 	str	r0, [r1, #252]
+   500c8:	08bd8010 	popeq	{r4, pc}
+   500cc:	e3a00078 	mov	r0, #120	; 0x78
+   500d0:	ee010f10 	mcr	15, 0, r0, cr1, cr0, {0}
+   500d4:	e3a00000 	mov	r0, #0	; 0x0
+   500d8:	ee070f9a 	mcr	15, 0, r0, cr7, cr10, {4}
+   500dc:	ee070f15 	mcr	15, 0, r0, cr7, cr5, {0}
+   500e0:	ee070f16 	mcr	15, 0, r0, cr7, cr6, {0}
+   500e4:	e3a0011a 	mov	r0, #-2147483642	; 0x80000006
+   500e8:	ee090f11 	mcr	15, 0, r0, cr9, cr1, {0}
+   500ec:	ee090f31 	mcr	15, 0, r0, cr9, cr1, {1}
+   500f0:	ee110f10 	mrc	15, 0, r0, cr1, cr0, {0}
+   500f4:	e3800805 	orr	r0, r0, #327680	; 0x50000
+   500f8:	ee010f10 	mcr	15, 0, r0, cr1, cr0, {0}
+   500fc:	e59f0018 	ldr	r0, [pc, #24]	; 5011c <copy_and_restart+0x110>
+   50100:	e3a01102 	mov	r1, #-2147483648	; 0x80000000
+   50104:	e5810ffc 	str	r0, [r1, #4092]
+   50108:	e1a0000c 	mov	r0, ip
+   5010c:	e8bd4010 	pop	{r4, lr}
+   50110:	e12fff10 	bx	r0
+   50114:	eafffffe 	b	50114 <copy_and_restart+0x108>
+   50118:	c0200000 	.word	0xc0200000
+   5011c:	12345678 	.word	0x12345678

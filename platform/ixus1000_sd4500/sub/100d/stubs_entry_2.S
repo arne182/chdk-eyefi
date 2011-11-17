@@ -1,0 +1,8 @@
+#include "stubs_asm.h"
+
+NHSTUB(kbd_pwr_on, 0xFF810B1C)                    //  ???????????????????  
+NHSTUB(SetZoomActuatorSpeedPercent, 0xFF810B1C)   //  ???????????????????  
+NHSTUB(MakeAFScan, 0xFF98989C) 
+
+NHSTUB(UnlockAndRefresh, 0xFF8B4F24)   //Looks like but diferent than sx210
+NHSTUB(LockAndRefresh, 0xFF8B4EC0)    // Looks like but diferent than sx210

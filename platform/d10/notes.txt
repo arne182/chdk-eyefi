@@ -1,0 +1,53 @@
+Powershot D10
+Port for Canon firmware 100a also works on 100b
+
+Camera information
+
+Digic IV
+propset 2
+No iris, only ND filter
+
+This is a mostly functional BETA build
+
+Not implemented/Not Working
+- DNG extension over USB: won't be implemented 
+- extra long exposures
+
+Working/completed
+- loader/* done
+- spytask: gui, menus etc
+- kbd task: key input, script execution, write lock override
+- initial work for all stubs_entry and stubs_min done, but there are probably some mistakes.
+- most files in platform other than capt_seq and movie_rec, including mode map, fl_tbl etc.
+- Tv bracketing in continuous mode
+- histogram
+- multi partition support
+- motion detection. Fast MD implemented, speedup not verified.
+- setting Tv from script
+- DNG matrix (DavidB)
+- OSD size/aspect (DavidB,reyalP)
+- zebra
+- dark frame subtraction control
+- video quality override
+- video optical zoom unlock
+- USB remote support
+- bracketing in custom timer mode
+- CHDK ptp extension
+
+Scripts tested successfully
+- llibtst.lua 
+- setmode.lua batch mode, including play/rec change
+- tstcallf.lua
+- romlog.lua
+- badpixel.lua
+- mdfb digic 3
+- remote.bas
+
+Known issues:
+- Continuous shooting with raw/dng enabled crashes (sometimes ?)
+- CHDK OSD disappears frequently.
+- If you press the shutter quickly without waiting for focus, override settings are ignored
+- DNG has dark borders. This is intentional, the active area covers all pixels that have any data, but there are large areas which have data but are distinct from the normal jpeg area.
+- AF in video doesn't seem to work
+- with video optical zoom, if you zoom into digital zoom, you cannot zoom out the optical
+- Startup crash, especially with lots of images on the card.

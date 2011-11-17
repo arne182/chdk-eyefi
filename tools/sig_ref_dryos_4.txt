@@ -1,0 +1,43 @@
+0xff810000
+GetDrive_ClusterSize 0xff876948 13
+GetDrive_FreeClusters 0xff8769a8 9
+srand 0xFFA5B358 13
+rand 0xFFA5B364 10
+qsort 0xFFB5FA2C 18
+GetFocusLensSubjectDistanceFromLens 0xff97e794 22
+closedir 0xFFAE2A70 20
+SetFileTimeStamp 0xFF83737C 23
+ReadFastDir 0xFFAE2C14 26
+readfastdir 0xFFAE2C14 26
+PT_PlaySound 0xFF88A140
+Remove 0xFF837114 14
+vsprintf 0xFF820640 15
+RenameFile_Fut 0xFF8369C4
+rename 0xFF8369C4
+mkdir 0xFF83757C 20
+opendir 0xFFAE2AC0
+openfastdir 0xFFAE2AC0
+reboot_fw_update 0xFFAE8034
+ScreenLock 0xFF8B4C98 11
+ScreenUnlock 0xFF8B4CFC 9
+apex2us 0xFFA5C23C
+WriteSDCard 0xFF96E820
+GetKbdState 0xFF865678 10
+UnlockAF 0xFF838978 12
+DoAFLock 0xFF838940 14
+PT_MoveOpticalZoomAt 0xFF87F598
+PT_MoveDigitalZoomToWide 0xFF87F5C0
+GetImageFolder 0xFF95F2FC
+MoveIrisWithAv 0xFFB04878
+GiveSemaphore 0xff83a94c
+DebugAssert 0xFF81EB78
+err_init_task 0xFF815FD4
+LEDDrive 0xFF8647EC
+PutInNdFilter 0xFFB04E6C
+PutOutNdFilter 0xFFB04E90
+task_CaptSeq 0xFF88261C
+task_InitFileModules 0xFF89FC7C
+task_RotaryEncoder 0xFF8657EC
+task_MovieRecord 0xFF987088
+task_ExpDrv 0xFF8CC0D0
+task_PhySw 0xFF8345EC

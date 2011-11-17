@@ -1,0 +1,6 @@
+- playback (>) key switch to ALT mode and back. Press longer for switching between Play/Shoot mode
+- Map KEY_PRINT to KEY_PLAYBACK when running script and change back when script isn't running
+
+TODO:
+
+- probably many things that I couldn't test
